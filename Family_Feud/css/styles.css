@@ -22,9 +22,11 @@ body {
   margin: 0 6vw;
 }
 
-.game-tiles  button {
-  margin: 10px;
+.game-tiles > img {
+  margin: 8.2px 0;
   cursor: pointer;
-  position: absolute;
-  top: -100px;
+  position: relative;
+  top: -430px;
+  left: 129px;
+  width: 31.6vw;
 }
