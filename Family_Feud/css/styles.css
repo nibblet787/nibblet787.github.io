@@ -1,3 +1,25 @@
 body {
   background-color: blue;
 }
+
+.container {
+  border: 1px solid gold;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+
+
+}
+.logo > img {
+  display: inline-block;
+  width: 50%;
+  margin: 0 12vw;
+}
+
+.game-box > img {
+  margin: 0 7.5vw;
+}
+
+.game-tiles  button {
+  margin: 50px;
+}
