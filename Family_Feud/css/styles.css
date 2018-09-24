@@ -5,7 +5,7 @@ body {
 .container {
   border: 1px solid gold;
   width: 50%;
-  height: 100%;
+  /* height: 75%; */
   margin: 0 auto;
   display: block;
 
@@ -19,7 +19,7 @@ body {
 
 .game-box > img {
   width: 75%;
-  margin: 0 6vw;
+  margin: 0 6vw 0 6vw;
 }
 
 .game-tiles > img {
@@ -29,4 +29,17 @@ body {
   top: -430px;
   left: 129px;
   width: 31.6vw;
+  vertical-align: inherit;
+}
+
+.survey-says > button {
+  width: 13vw;
+  height: 5vw;
+  text-align: center;
+  background-color: rgb(251,203,65);
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 12px;
+  color: white;
+  text-shadow: #000000 1px 0 10px;
 }
