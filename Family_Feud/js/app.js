@@ -51,7 +51,6 @@ $('#answer2').text($answer2 + " $" + $money2);
 $('#answer3').text($answer3 + " $" + $money3);
 $('#answer4').text($answer4 + " $" + $money4);
 
-console.log($answer1);
 
 
 $('.survey-says').on('click', ()=> {
@@ -59,31 +58,44 @@ $('.survey-says').on('click', ()=> {
     const $inputLowercase = $input.toLowerCase();
     if ($inputLowercase === $answer0.toLowerCase()) {
       $('.tile0').attr('id', 'spin');
-      // $dark();
-      // $('#input-box').val('');
+      let newBank = bank + $money0;
+      $('#money').text("$" + newBank);
+      $('#input-box').val('');
+
     } else if ($inputLowercase === $answer1.toLowerCase()) {
       $('.tile1').attr('id', 'spin');
-      // $dark();
-      // $('#input-box').val('');
+      let newBank = bank + $money1;
+      $('#money').text(newBank);
+      $('#input-box').val('');
+
     } else if ($inputLowercase === $answer2.toLowerCase()) {
       $('.tile2').attr('id', 'spin');
-      // $dark();
-      // $('#input-box').val('');
+      let newBank = bank + $money2;
+      $('#money').text(newBank);
+      $('#input-box').val('');
+
     } else if ($inputLowercase === $answer3.toLowerCase()) {
       $('.tile3').attr('id', 'spin');
-      // $dark();
-      // $('#input-box').val('');
+      let newBank = bank + $money3;
+      $('#money').text(newBank);
+      $('#input-box').val('');
+
     } else if ($inputLowercase === $answer4.toLowerCase()) {
       $('.tile4').attr('id', 'spin');
-      // $dark();
-      // $('#input-box').val('');
+      let newBank = bank + $money4;
+      $('#money').text(newBank);
+      $('#input-box').val('');
+
     } else {
-        console.log('nope');
-        $('#input-box').val('');
+            const bank = newBank - 10;
+            $('#money').text(newBank);
+            $('#input-box').val('');
     }
 
 
 });
+
+
 
 // const $dark = () => {
 //   $('.tile5').css('visibility', 'hidden');
