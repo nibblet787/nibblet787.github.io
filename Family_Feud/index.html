@@ -2,20 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="css/styles.css">
     <title>Family Feud</title>
   </head>
   <body>
     <div class="container">
-      <div id="start-over">
+      <!-- Reset Button -->
+      <aside id="start-over">
         <a class="reset" href="index.html">RESET</a>
-      </div>
+      </aside>
+      <!-- Bank account display -->
+      <aside class="bank">
+        <h3>BANK</h3>
+          <div id="money">$45</div>
+      </aside>
+      <!-- Top logo -->
       <div class="logo">
         <img src="imgs/FamilyFeudLogo.png" alt="Family Feud">
       </div>
+      <!-- Main game grid -->
       <div class="game-box">
         <img src="imgs/FF_background.png" alt="Game Board">
+        <!-- Game answer tiles -->
         <div class="game-tiles">
           <img src="imgs/ff_tile1.png" class="tile1" alt="tile 1">
           <img src="imgs/ff_tile2.png" class="tile2" alt="tile 2">
@@ -24,18 +32,28 @@
           <img src="imgs/ff_tile5.png" class="tile5" alt="tile 5">
         </div>
       </div>
+      <!-- Player submission field -->
       <div id="input-container">
         <!--         input and input button -->
         <label for="input-box"></label>
         <input type="text" name="" value="" id="input-box">
+        <!-- Submit button -->
         <button class="survey-says">Survey Says...!</button>
       </div>
+      <!-- Credit link for images used -->
       <footer class="credits">
           <a href="https://macintoshhowto.com/keynote/family-feud-in-keynote.html">Image credits</a>
       </footer>
     </div>
-    <div class="question-box"></div>
-      <p>Name something personal of yours that you deliberately burned</p>
+    <!-- Display for game challenges -->
+    <div class="question-box">
+      <p class="question">Name something personal of yours that you deliberately burned</p>
+
+    </div>
+    <!-- Game rules -->
+    <div class="rules">
+      <p>RULES: Player starts with $50. Each submitted answer that's on the board will be rewarded with the money associated with it. Each wrong answer will deduct $10. Player loses when the bank account hits $0</p>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
     <script src="js/answers.js" charset="utf-8"></script>

@@ -5,8 +5,8 @@ body {
 .container {
   /* border: 1px solid gold; */
   max-width: 50%;
-  height: 100%;
-  margin: 0 auto;
+  height: 80%;
+  margin: -14.5vw auto;
   display: block;
   /* list-style: none;
   text-decoration: none; */
@@ -37,13 +37,14 @@ body {
   text-shadow: #000000 1px 0 10px;
   /* margin: 10vw auto; */
   position: relative;
-  top: 1vw;
+  top: 21.3vw;
+  left: 6vw;
   z-index: 5;
   border: 5px solid black;
   border-radius: 12px;
   list-style: none;
   text-decoration: none;
-  padding: .3vw 2vw;
+  padding: .3vw 1vw;
 }
 
 .logo {
@@ -146,16 +147,16 @@ button:hover {
   transition-timing-function: easeOut;
 }
 
-p {
+.question-box > p {
   width: 25vw;
   height: 12vw;
   background-color: rgb(251,203,65);
   border: 3px solid brown;
   border-radius: 12px;
   position: relative;
-  bottom: 62.5vw;
+  bottom: 48vw;
   left: 1.2vw;
-  text-align: center;
+  text-align: justify;
   padding: 1vw;
   font-size: 2vw;
   font-weight: bold;
@@ -167,12 +168,55 @@ p {
   overflow: hidden;
 }
 
+.rules > p {
+  width: 25vw;
+  height: 12vw;
+  /* background-color: rgb(251,203,65); */
+  /* border: 3px solid brown; */
+  /* border-radius: 12px; */
+  position: relative;
+  bottom: 52vw;
+  left: 1.2vw;
+  text-align: justify;
+  padding: 1vw;
+  font-size: 1.3vw;
+  font-weight: bold;
+  color: white;
+  text-shadow: #000000 1px 0 10px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  overflow: hidden;
+  letter-spacing: .1vw;
+}
 
+aside > h3 {
+  color: white;
+  text-shadow: #000000 1px 0 10px;
+  text-align: center;
+  position: relative;
+  left: 27vw;
+  top: 30vw;
+  font-size: 1.3vw;
+  font-weight: bold;
+}
 
-
-
-
-
+#money {
+  width: 10vw;
+  height: 6.5vw;
+  background-color: black;
+  border: 10px solid rgb(251,203,65);
+  border-radius: 12px;
+  color: white;
+  text-shadow: #000000 1px 0 10px;
+  text-align: center;
+  position: relative;
+  left: 45vw;
+  top: 29vw;
+  font-size: 6vw;
+  font-weight: bold;
+  padding: 1vw 1vw;
+}
 
 
 
