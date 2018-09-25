@@ -8,8 +8,12 @@
   </head>
   <body>
     <div class="container">
+      <div id="start-over">
+        <a class="reset" href="index.html">RESET</a>
+      </div>
       <div class="logo">
         <img src="imgs/FamilyFeudLogo.png" alt="Family Feud">
+      </div>
       <div class="game-box">
         <img src="imgs/FF_background.png" alt="Game Board">
         <div class="game-tiles">
@@ -19,14 +23,15 @@
           <img src="imgs/ff_tile4.png" class="tile4" alt="tile 4">
           <img src="imgs/ff_tile5.png" class="tile5" alt="tile 5">
         </div>
-        <div class="survey-says">
-          <button>Survey Says...!</button>
-        </div>
-
       </div>
+      <div id="input-container">
+        <!--         input and input button -->
+        <label for="input-box"></label>
+        <input type="text" name="" value="" id="input-box">
+        <button class="survey-says">Survey Says...!</button>
       </div>
-      <footer>
-        <a href="https://macintoshhowto.com/keynote/family-feud-in-keynote.html">Image credits</a>
+      <footer class="credits">
+          <a href="https://macintoshhowto.com/keynote/family-feud-in-keynote.html">Image credits</a>
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" charset="utf-8"></script>

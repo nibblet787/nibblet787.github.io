@@ -4,42 +4,123 @@ body {
 
 .container {
   border: 1px solid gold;
-  width: 50%;
-  /* height: 75%; */
+  max-width: 50%;
+  height: 100%;
   margin: 0 auto;
   display: block;
-
-
-}
-.logo > img {
-  display: inline-block;
-  width: 50%;
-  margin: 0 12vw;
+  /* list-style: none;
+  text-decoration: none; */
 }
 
-.game-box > img {
-  width: 75%;
-  margin: 0 6vw 0 6vw;
-}
-
-.game-tiles > img {
-  margin: 8.2px 0;
-  cursor: pointer;
-  position: relative;
-  top: -430px;
-  left: 129px;
-  width: 31.6vw;
-  vertical-align: inherit;
-}
-
-.survey-says > button {
-  width: 13vw;
-  height: 5vw;
+#start-over > a {
+  /* width: 100px;
+  height: 20vw; */
   text-align: center;
   background-color: rgb(251,203,65);
-  font-size: 20px;
+  font-size: 1.3vw;
   font-weight: bolder;
   border-radius: 12px;
   color: white;
   text-shadow: #000000 1px 0 10px;
+  /* margin: 10vw auto; */
+  position: relative;
+  top: 1vw;
+  z-index: 5;
+  border: 5px solid black;
+  border-radius: 12px;
+  list-style: none;
+  text-decoration: none;
+  padding: .3vw 2vw;
+}
+
+.logo {
+    /* z-index: 2; */
+}
+
+.logo > img {
+  display: inline-block;
+  width: 50%;
+  margin: -3vw 12vw;
+  position: relative;
+  /* z-index: 2; */
+
+}
+
+.game-box > img {
+  width: 75%;
+  margin: -0.5vw 6vw 0 6vw;
+  /* z-index: -1; */
+  border: 5px solid black;
+  border-radius: 10px;
+
+}
+
+.game-tiles > img {
+  margin: 1.4vw 0;
+  display: flex;
+  align-content: space-between;
+  /* flex: 33%; */
+  /* max-width: 50%; */
+  position: relative;
+  bottom: 31.1vw;
+  /* top: -428px;*/
+  left: 9.3vw;
+  width: 31.6vw;
+  vertical-align: inherit;
+}
+
+#input-box {
+  background-color: rgb(251,203,65);
+  text-align: center;
+  padding: 1vw;
+  font-size: 2vw;
+  font-weight: bold;
+  color: white;
+  width: 20vw;
+  border: 3px solid brown;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  bottom: 29.6vw;
+  left: 13.3vw;
+}
+
+.survey-says {
+  width: 16vw;
+  /* height: 5vw; */
+  text-align: center;
+  background-color: rgb(251,203,65);
+  font-size: 1.6vw;
+  font-weight: bolder;
+  border: 5px solid black;
+  border-radius: 12px;
+  color: white;
+  text-shadow: #000000 1px 0 10px;
+  /* margin: 0 auto; */
+  position: relative;
+  bottom: 25vw;
+  right: 6vw;
+  padding: .3vw 1vw;
+}
+
+.logo, .game-box, {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: -2;
+}
+
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+.credits {
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  list-style: none;
 }

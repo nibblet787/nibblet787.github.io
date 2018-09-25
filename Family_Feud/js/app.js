@@ -4,6 +4,8 @@
 $(() => {
 
 
+$('.survey-says').on('click', input-box);
+
 
 
 
