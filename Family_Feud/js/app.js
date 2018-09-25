@@ -33,24 +33,23 @@ const challenges = {
 };
 
 let $question = challenges.challenge;
-let $answer1 = challenges.answers[0][0];
-let $money1 = challenges.answers[0][1];
-let $answer2 = challenges.answers[1][0];
-let $money2 = challenges.answers[1][1];
-let $answer3 = challenges.answers[2][0];
-let $money3 = challenges.answers[2][1];
-let $answer4 = challenges.answers[3][0];
-let $money4 = challenges.answers[3][1];
-let $answer5 = challenges.answers[4][0];
-let $money5 = challenges.answers[4][1];
+let $answer0 = challenges.answers[0][0];
+let $money0 = challenges.answers[0][1];
+let $answer1 = challenges.answers[1][0];
+let $money1 = challenges.answers[1][1];
+let $answer2 = challenges.answers[2][0];
+let $money2 = challenges.answers[2][1];
+let $answer3 = challenges.answers[3][0];
+let $money3 = challenges.answers[3][1];
+let $answer4 = challenges.answers[4][0];
+let $money4 = challenges.answers[4][1];
 
 $('.question').text(challenges.challenge);
-$('#answer1').text(challenges.answers[0][0]);
-$('#answer2').text(challenges.answers[1][0]);
-$('#answer3').text(challenges.answers[2][0]);
-$('#answer4').text(challenges.answers[3][0]);
-// $('#answer5').text(challenges.answers[4][0] + challenges.answers[0][1]);
-$('#answer5').text($answer1 + " $" + $money1);
+$('#answer0').text($answer0 + " $" + $money0);
+$('#answer1').text($answer1 + " $" + $money1);
+$('#answer2').text($answer2 + " $" + $money2);
+$('#answer3').text($answer3 + " $" + $money3);
+$('#answer4').text($answer4 + " $" + $money4);
 
 console.log($answer1);
 
@@ -58,23 +57,38 @@ console.log($answer1);
 $('.survey-says').on('click', ()=> {
     const $input = $('#input-box').val();
     const $inputLowercase = $input.toLowerCase();
-    if ($inputLowercase === $answer1.toLowerCase()) {
-      $('.tile5').attr('id', 'spin');
-      $dark();
-      $('#input-box').val('');
+    if ($inputLowercase === $answer0.toLowerCase()) {
+      $('.tile0').attr('id', 'spin');
+      // $dark();
+      // $('#input-box').val('');
+    } else if ($inputLowercase === $answer1.toLowerCase()) {
+      $('.tile1').attr('id', 'spin');
+      // $dark();
+      // $('#input-box').val('');
+    } else if ($inputLowercase === $answer2.toLowerCase()) {
+      $('.tile2').attr('id', 'spin');
+      // $dark();
+      // $('#input-box').val('');
+    } else if ($inputLowercase === $answer3.toLowerCase()) {
+      $('.tile3').attr('id', 'spin');
+      // $dark();
+      // $('#input-box').val('');
+    } else if ($inputLowercase === $answer4.toLowerCase()) {
+      $('.tile4').attr('id', 'spin');
+      // $dark();
+      // $('#input-box').val('');
     } else {
-      console.log('nope');
-      $('#input-box').val('');
+        console.log('nope');
+        $('#input-box').val('');
     }
 
-    // $('.tile5').attr('id', 'spin');
-    // $dark();
 
 });
 
-const $dark = () => {
-  $('.tile5').css('visibility', 'hidden');
-};
+// const $dark = () => {
+//   $('.tile5').css('visibility', 'hidden');
+//   $('#input-box').val('');
+// };
 
 
 
