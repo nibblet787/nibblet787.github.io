@@ -3,13 +3,26 @@ body {
 }
 
 .container {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
   max-width: 50%;
   height: 100%;
   margin: 0 auto;
   display: block;
   /* list-style: none;
   text-decoration: none; */
+}
+
+#black {
+  margin: 1.4vw 0;
+  display: flex;
+  align-content: space-between;
+  position: relative;
+  bottom: 59.6vw;
+  left: 9.3vw;
+  width: 31.6vw;
+  vertical-align: inherit;
+  z-index: 1;
+
 }
 
 #start-over > a {
@@ -49,7 +62,7 @@ body {
 .game-box > img {
   width: 75%;
   margin: -0.5vw 6vw 0 6vw;
-  /* z-index: -1; */
+  z-index: 0;
   border: 5px solid black;
   border-radius: 10px;
 
@@ -67,6 +80,7 @@ body {
   left: 9.3vw;
   width: 31.6vw;
   vertical-align: inherit;
+  z-index: 2;
 }
 
 #input-box {
@@ -81,8 +95,9 @@ body {
   border-radius: 12px;
   position: relative;
   z-index: 2;
-  bottom: 29.6vw;
+  bottom: 29.5vw;
   left: 13.3vw;
+  text-shadow: #000000 1px 0 10px;
 }
 
 .survey-says {
@@ -124,3 +139,77 @@ button:hover {
   text-decoration: none;
   list-style: none;
 }
+
+#spin {
+  transform: rotateX(630deg);
+  transition: 1.5s;
+  transition-timing-function: easeOut;
+}
+
+p {
+  width: 25vw;
+  height: 12vw;
+  background-color: rgb(251,203,65);
+  border: 3px solid brown;
+  border-radius: 12px;
+  position: relative;
+  bottom: 62.5vw;
+  left: 1.2vw;
+  text-align: center;
+  padding: 1vw;
+  font-size: 2vw;
+  font-weight: bold;
+  color: white;
+  text-shadow: #000000 1px 0 10px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end */
