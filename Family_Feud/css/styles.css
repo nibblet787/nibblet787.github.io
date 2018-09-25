@@ -12,7 +12,7 @@ body {
   text-decoration: none; */
 }
 
-#black {
+/* #black {
   margin: 1.4vw 0;
   display: flex;
   align-content: space-between;
@@ -23,7 +23,7 @@ body {
   vertical-align: inherit;
   z-index: 1;
 
-}
+} */
 
 #start-over > a {
   /* width: 100px;
@@ -75,9 +75,9 @@ body {
   /* flex: 33%; */
   /* max-width: 50%; */
   position: relative;
-  bottom: 31.1vw;
+  bottom: 31.3vw;
   /* top: -428px;*/
-  left: 9.3vw;
+  left: 9.5vw;
   width: 31.6vw;
   vertical-align: inherit;
   z-index: 2;
