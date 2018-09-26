@@ -31,7 +31,7 @@ let bank = 50;
 // challenges array =================================
 const challenges = {
                   challenge: "Name something you operate by pushing a button",
-                  answers: [["Elevator", 7], ["Telephone",13], ["Microwave",10], ["TV",8], ["Doorbell",6]]
+                  answers: [["Elevator", 37], ["Telephone",13], ["Microwave",10], ["TV",8], ["Doorbell",6]]
 };
 
 // trying to shorten things down for a cleaner look =================================
@@ -78,9 +78,14 @@ const winner = () => {
 //   }
 // }
 
+const $bar = () => {
+  $('#money').removeClass('wrongAnswer');
+};
+
 // Takes input box and comares it to available answers =================================
 $('.survey-says').on('click', ()=> {
     const $input = $('#input-box').val();
+    // $bar();
     const $inputLowercase = $input.toLowerCase();
     if ($inputLowercase === $answer0.toLowerCase()) {
       // $test();
@@ -131,10 +136,14 @@ $('.survey-says').on('click', ()=> {
       winner();
 
     } else {
+            $('#money').addClass('wrongAnswer');
             bank = bank -= 10;
             $('#money').text("$" + bank);
             $('#input-box').val('');
             winner();
+            // setTimeout($bar(), 5000);
+            $('#money').delay(5000).removeClass('wrongAnswer');
+            // $bar();
     }
 
 
