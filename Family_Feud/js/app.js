@@ -33,6 +33,11 @@
 
 // =============================================================================
 // Global variable build =================================
+// let $player1Bank = $('.currentPlayer').text();
+// $player1Bank = $parseInt();
+// console.log($player1Bank);
+let $player2Bank = $('.currentPlayer').text();
+console.log(typeof $player2Bank);
 let bank = 50;
 let $question;
 let $answer0;
@@ -97,7 +102,7 @@ const $stringBuild = () => {
                   $('#answer4').text($answer4 + " $" + $money4);
 };
 
-// Restting game tiles to default setting and attributes ==================
+// Restting game tiles to default setting and attributes for the next round ==================
 const $resetTiles = () => {
   $('.tile0, .tile1, .tile2, .tile3, .tile4').removeAttr('id');
 }
@@ -119,7 +124,7 @@ const winner = () => {
 
 // Check after each successful guess to see if all tiles have been cleared =================
 const $checkAllTiles = () => {
-  if ($('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
+  if (bank < 99 && $('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
     alert('The board has been cleared. Moving on to the next round!');
     $resetTiles();
     $round2();
@@ -128,24 +133,40 @@ const $checkAllTiles = () => {
   }
 };
 
+// Switch Current Player status from one to another ===================
+const $playerSwitch = () => {
+  const $player1 = $('#player1-money')
+  const $player2 = $('#player2-money')
+  if ($player1.attr('class') === 'currentPlayer') {
+    $player1.removeClass('currentPlayer').addClass('other');
+    $player2.removeClass().addClass('currentPlayer');
 
-$round1();
+  } else if ($player2.attr('class') === 'currentPlayer') {
+    $player2.removeClass('currentPlayer').addClass('other');
+    $player1.removeClass().addClass('currentPlayer');
+  } else {
+    console.log('switching players');
+  }
+};
+// $playerSwitch();
 // Takes input box and compares it to available answers =================================
 $('.survey-says').on('click', (e)=> {
     const $input = $('#input-box').val();
-    const $inputLowercase = $input.toLowerCase();
+    const $inputLowercase = $input.toLowerCase(); // convert to lower case so no errors on input
     if ($inputLowercase === $answer0.toLowerCase()) {
           const $picked = $('.tile0').attr('id');
-          if ($picked === 'spin') {
+          if ($picked === 'spin') { // an ID of 'spin' enables the animation
               alert('Pick something else');
-              $('#input-box').val('');
+              $('#input-box').val(''); // clears input box for next word
       }       else {
                     $('.tile0').attr('id', 'spin');
+                    // let $bank =
                     bank = bank += $money0;
-                    $('#money').text("$" + bank);
+                    $('.currentPlayer').text("$" + bank); //updates current bank account
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
+                    $playerSwitch();
     }
     } else if ($inputLowercase === $answer1.toLowerCase()) {
           const $picked = $('.tile1').attr('id');
@@ -155,7 +176,7 @@ $('.survey-says').on('click', (e)=> {
       }       else {
                     $('.tile1').attr('id', 'spin');
                     bank = bank += $money1;
-                    $('#money').text("$" + bank);
+                    $('.currentPlayer').text("$" + bank);
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
@@ -168,7 +189,7 @@ $('.survey-says').on('click', (e)=> {
       }       else {
                     $('.tile2').attr('id', 'spin');
                     bank = bank += $money2;
-                    $('#money').text("$" + bank);
+                    $('.currentPlayer').text("$" + bank);
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
@@ -177,7 +198,7 @@ $('.survey-says').on('click', (e)=> {
           const $picked = $('.tile3').attr('id');
           if ($picked === 'spin') {
               alert('Pick something else');
-              $('#input-box').val('');
+              $('.currentPlayer').val('');
       }       else {
                     $('.tile3').attr('id', 'spin');
                     bank = bank += $money3;
@@ -190,7 +211,7 @@ $('.survey-says').on('click', (e)=> {
           const $picked = $('.tile4').attr('id');
           if ($picked === 'spin') {
               alert('Pick something else');
-              $('#input-box').val('');
+              $('.currentPlayer').val('');
       }       else {
                     $('.tile4').attr('id', 'spin');
                     bank = bank += $money4;
@@ -198,16 +219,21 @@ $('.survey-says').on('click', (e)=> {
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
+                    $playerSwitch();
     }
     } else {
-            const $byeMoney = $('<h1>').appendTo('.bank').text('-10').addClass('wrongAnswer').fadeOut(1000);
+            const $byeMoney = $('<h1>').appendTo('.currentPlayer').text('-10').addClass('wrongAnswer').fadeOut(1000);
             bank = bank -= 10;
-            $('#money').text("$" + bank);
+            $('.currentPlayer').text("$" + bank);
             $('#input-box').val('');
+            $('.bank').remove('h1');
             winner();
+            $playerSwitch();
     }
 });
 
+// Game Start =========================
+$round1();
 
 
 
@@ -227,19 +253,6 @@ $('.survey-says').on('click', (e)=> {
 
 
 
-
-
-
-
-
-// ["Doorbell",6], ["Blender",4], ["Washer",4], ["Computer",3], ["Dishwasher",3] , ["Garage Door Opener",3]
-
-
-
-// const $dark = () => {
-//   $('.tile5').css('visibility', 'hidden');
-//   $('#input-box').val('');
-// };
 
 
 

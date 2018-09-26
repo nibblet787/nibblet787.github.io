@@ -200,20 +200,41 @@ footer > a {
   letter-spacing: .1vw;
 }
 
-#money {
+/* Player 1 bank account display */
+#player1-money {
   width: 10vw;
   height: 6.5vw;
   background-color: black;
   border: 10px solid rgb(251,203,65);
   border-radius: 12px;
-  color: white;
-  text-shadow: #000000 1px 0 10px;
+  /* color: white; */
   text-align: center;
   font-size: 6vw;
   font-weight: bold;
   padding: 1vw 1vw;
+  position: relative;
+  left: 45vw;
+  top: 31.7vw;
 }
 
+/* Player 2 bank account display */
+#player2-money {
+  width: 10vw;
+  height: 6.5vw;
+  background-color: black;
+  border: 10px solid rgb(251,203,65);
+  border-radius: 12px;
+  /* color: white; */
+  text-align: center;
+  font-size: 6vw;
+  font-weight: bold;
+  padding: 1vw 1vw;
+  position: relative;
+  left: 45vw;
+  top: 40.1vw;
+}
+
+/* Player 1 bank account name tag */
 aside > h3 {
   color: white;
   text-shadow: #000000 1px 0 10px;
@@ -225,6 +246,7 @@ aside > h3 {
   font-weight: bold;
 }
 
+/* Player 2 bank account name tag */
 aside > h2 {
   color: white;
   text-shadow: #000000 1px 0 10px;
@@ -237,20 +259,14 @@ aside > h2 {
   z-index: 7;
 }
 
-.player1 {
-  position: relative;
-  left: 45vw;
-  top: 31.7vw;
-}
-
-.player2 {
-  position: relative;
-  left: 45vw;
-  top: 40.1vw;
-}
-
 .currentPlayer {
   color: cyan;
+  opacity: 1;
+  animation: fade 3s infinite;
+}
+
+.other {
+  color: white;
 }
 
 .wrongAnswer {
@@ -279,7 +295,10 @@ aside > h2 {
    }
 }
 
-
+@keyframes fade {
+  0%,100% { opacity: .3 }
+  50% { opacity: 1 }
+}
 
 
 
