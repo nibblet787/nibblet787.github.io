@@ -136,14 +136,11 @@ $('.survey-says').on('click', ()=> {
       winner();
 
     } else {
-            $('#money').addClass('wrongAnswer');
+            const $byeMoney = $('<h1>').appendTo('.bank').text('-10').addClass('wrongAnswer').fadeOut(1000);
             bank = bank -= 10;
             $('#money').text("$" + bank);
             $('#input-box').val('');
             winner();
-            // setTimeout($bar(), 5000);
-            $('#money').delay(5000).removeClass('wrongAnswer');
-            // $bar();
     }
 
 

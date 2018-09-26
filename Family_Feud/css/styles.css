@@ -238,130 +238,56 @@ aside > h3 {
 }
 
 
-.wrongAnswer {
+/* .wrongAnswer {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* SCREEN SHAKE CODE ========================================= */
-
-/* @keyframes shakeit {
-  0% { transform: translate(2px, 1px) rotate(0deg); }
-	10% { transform: translate(-1px, -2px) rotate(-1deg); }
-	20% { transform: translate(-3px, 0px) rotate(1deg); }
-	30% { transform: translate(0px, 2px) rotate(0deg); }
-	40% { transform: translate(1px, -1px) rotate(1deg); }
-	50% { transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { transform: translate(-3px, 1px) rotate(0deg); }
-	70% { transform: translate(2px, 1px) rotate(-1deg); }
-	80% { transform: translate(-1px, -1px) rotate(1deg); }
-	90% { transform: translate(2px, 2px) rotate(0deg); }
-	100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-@-o-keyframes shakeit {
-	0% { -o-transform: translate(2px, 1px) rotate(0deg); }
-	10% { -o-transform: translate(-1px, -2px) rotate(-1deg); }
-	20% { -o-transform: translate(-3px, 0px) rotate(1deg); }
-	30% { -o-transform: translate(0px, 2px) rotate(0deg); }
-	40% { -o-transform: translate(1px, -1px) rotate(1deg); }
-	50% { -o-transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { -o-transform: translate(-3px, 1px) rotate(0deg); }
-	70% { -o-transform: translate(2px, 1px) rotate(-1deg); }
-	80% { -o-transform: translate(-1px, -1px) rotate(1deg); }
-	90% { -o-transform: translate(2px, 2px) rotate(0deg); }
-	100% { -o-transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-@-webkit-keyframes shakeit {
-	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
-	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
-	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
-	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
-	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
-	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
-	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
-	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
-	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
-	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-@-moz-keyframes shakeit {
-	0% { -moz-transform: translate(2px, 1px) rotate(0deg); }
-	10% { -moz-transform: translate(-1px, -2px) rotate(-1deg); }
-	20% { -moz-transform: translate(-3px, 0px) rotate(1deg); }
-	30% { -moz-transform: translate(0px, 2px) rotate(0deg); }
-	40% { -moz-transform: translate(1px, -1px) rotate(1deg); }
-	50% { -moz-transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { -moz-transform: translate(-3px, 1px) rotate(0deg); }
-	70% { -moz-transform: translate(2px, 1px) rotate(-1deg); }
-	80% { -moz-transform: translate(-1px, -1px) rotate(1deg); }
-	90% { -moz-transform: translate(2px, 2px) rotate(0deg); }
-	100% { -moz-transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.shake {
-	-webkit-animation-name: shakeit;
-	-webkit-animation-duration: 0.8s;
-	-webkit-transform-origin:50% 50%;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
-  -moz-animation-name: shakeit;
-	-moz-animation-duration: 0.8s;
-	-moz-transform-origin:50% 50%;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-timing-function: linear;
-  -o-animation-name: shakeit;
-	-o-animation-duration: 0.8s;
-	-o-transform-origin:50% 50%;
-	-o-animation-iteration-count: infinite;
-	-o-animation-timing-function: linear;
-  animation-name: shakeit;
-	animation-duration: 0.8s;
-	transform-origin:50% 50%;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-.shake{
-	display:inline-block
 } */
+
+.wrongAnswer {
+  color: red;
+  text-align: center;
+  position: absolute;
+  left: 73.2vw;
+  top: 17.5vw;
+  font-size: 6vw;
+  font-weight: bold;
+  z-index: 7;
+  animation-name: fadeOutUp;
+  animation-duration: 1s;
+}
+
+
+
+@keyframes fadeOutUp {
+   0% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+   100% {
+      opacity: 0;
+      transform: translateY(-200px);
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
