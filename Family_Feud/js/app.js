@@ -1,9 +1,9 @@
 // console.log('this is app.js');
 
 let bank = 50;
-let newBank = 50;
 
-$(() => {
+
+// $(() => {
 
 
 // const challenges = [{
@@ -27,11 +27,14 @@ $(() => {
 // console.log(test.challenge);
 // // let randomChallenges =
 // };
+
+// challenges array =================================
 const challenges = {
                   challenge: "Name something you operate by pushing a button",
-                  answers: [["Elevator", 37], ["Telephone",13], ["Microwave",10], ["TV",8], ["Doorbell",6]]
+                  answers: [["Elevator", 7], ["Telephone",13], ["Microwave",10], ["TV",8], ["Doorbell",6]]
 };
 
+// trying to shorten things down for a cleaner look =================================
 let $question = challenges.challenge;
 let $answer0 = challenges.answers[0][0];
 let $money0 = challenges.answers[0][1];
@@ -44,6 +47,7 @@ let $money3 = challenges.answers[3][1];
 let $answer4 = challenges.answers[4][0];
 let $money4 = challenges.answers[4][1];
 
+// Constructing the string for display on the game board =================================
 $('.question').text(challenges.challenge);
 $('#answer0').text($answer0 + " $" + $money0);
 $('#answer1').text($answer1 + " $" + $money1);
@@ -51,50 +55,104 @@ $('#answer2').text($answer2 + " $" + $money2);
 $('#answer3').text($answer3 + " $" + $money3);
 $('#answer4').text($answer4 + " $" + $money4);
 
+// Checks for winner each turn =================================
+const winner = () => {
+  if (bank >= 99) {
+    alert('You made it to $99! Congrats! YOU WIN!!!!!!!!');
+    $('#money').text("$" + 99);
+  } else if (bank <= 0) {
+    alert('You ran out of money! YOU LOSE!!');
+  } else{
+    console.log('checked for win or lose');
+  }
+};
 
+const $test = () => {
+      let blah = document.getElementsByTagName("img").getAttribute('id');
+      console.log(blah);
+      // if (blah === '#blah') {
+      //   alert('You already guessed this answer correctly');
+      // } return;
+      // else {
+      //   console.log('checked ID');
+      // }
+};
 
+// Takes input box and comares it to available answers =================================
 $('.survey-says').on('click', ()=> {
     const $input = $('#input-box').val();
     const $inputLowercase = $input.toLowerCase();
     if ($inputLowercase === $answer0.toLowerCase()) {
+      $test();
       $('.tile0').attr('id', 'spin');
       bank = bank += $money0;
       $('#money').text("$" + bank);
       $('#input-box').val('');
-      console.log(newBank);
+      winner();
 
     } else if ($inputLowercase === $answer1.toLowerCase()) {
       $('.tile1').attr('id', 'spin');
       bank = bank += $money1;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      winner();
 
     } else if ($inputLowercase === $answer2.toLowerCase()) {
       $('.tile2').attr('id', 'spin');
       bank = bank += $money2;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      winner();
 
     } else if ($inputLowercase === $answer3.toLowerCase()) {
       $('.tile3').attr('id', 'spin');
       bank = bank += $money3;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      winner();
 
     } else if ($inputLowercase === $answer4.toLowerCase()) {
       $('.tile4').attr('id', 'spin');
       bank = bank += $money4;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      winner();
 
     } else {
             bank = bank -= 10;
             $('#money').text("$" + bank);
             $('#input-box').val('');
+            winner();
     }
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ["Doorbell",6], ["Blender",4], ["Washer",4], ["Computer",3], ["Dishwasher",3] , ["Garage Door Opener",3]
 
 
 
@@ -105,30 +163,5 @@ $('.survey-says').on('click', ()=> {
 
 
 
-// ["Doorbell",6], ["Blender",4], ["Washer",4], ["Computer",3], ["Dishwasher",3] , ["Garage Door Opener",3]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
+// });
