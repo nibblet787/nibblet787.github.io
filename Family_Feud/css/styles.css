@@ -5,7 +5,7 @@ body {
 .container {
   /* border: 1px solid gold; */
   max-width: 50%;
-  /* height: 80%; */
+  height: 8vw;
   margin: -28vw auto;
   display: block;
   padding: 0;
@@ -51,18 +51,19 @@ body {
 .game-box {
   margin: 0;
   padding: 0;
-  height: 10vw;
+  height: 45vw;
+}
+
+.game-tiles {
+  height: 5vw;
 }
 
 .game-tiles > img {
   margin: 1.4vw 0;
   display: flex;
   align-content: space-between;
-  /* flex: 33%; */
-  /* max-width: 50%; */
   position: relative;
   bottom: 31.2vw;
-  /* top: -428px;*/
   left: 9.3vw;
   width: 31.6vw;
   vertical-align: inherit;
@@ -100,7 +101,7 @@ body {
   border-radius: 12px;
   position: relative;
   z-index: 2;
-  bottom: 60vw;
+  top: -13vw;
   left: 13.3vw;
   text-shadow: #000000 1px 0 10px;
 }
@@ -118,7 +119,7 @@ body {
   text-shadow: #000000 1px 0 10px;
   /* margin: 0 auto; */
   position: relative;
-  bottom: 55.5vw;
+  top: -8.6vw;
   right: 6.2vw;
   padding: .3vw 1vw;
 }
@@ -146,7 +147,7 @@ footer > a {
   margin: 0;
   padding: 0;
   position: relative;
-  bottom: 58vw;
+  top: -11.3vw;
   right: 22vw;
 }
 
@@ -163,7 +164,7 @@ footer > a {
   border: 3px solid brown;
   border-radius: 12px;
   position: relative;
-  bottom: 65vw;
+  top: 64vw;
   left: 1.2vw;
   text-align: justify;
   padding: 1vw;
@@ -184,7 +185,7 @@ footer > a {
   /* border: 3px solid brown; */
   /* border-radius: 12px; */
   position: relative;
-  bottom: 68vw;
+  top: 61vw;
   left: 1.2vw;
   text-align: justify;
   padding: 1vw;
