@@ -1,6 +1,6 @@
 // console.log('this is app.js');
 
-let bank = 50;
+
 
 
 // $(() => {
@@ -28,15 +28,12 @@ let bank = 50;
 // // let randomChallenges =
 // };
 
-// challenges array =================================
-const challenges = [{
-                  challenge: "Name something you operate by pushing a button",
-                  answers: [["Elevator", 37], ["Telephone", 13], ["Microwave", 10], ["TV", 8], ["Doorbell", 6]]},
-                  {
-                  challenge: "What's the first thing you do after waking up from a nap?",
-                  answers: [["Go To Bathroom", 21], ["Check The Time", 18], ["Stretch", 15], ["Yawn", 9], ["Get A Drink", 8]]
-                }];
 
+
+
+// =============================================================================
+// Global variable build =================================
+let bank = 50;
 let $question;
 let $answer0;
 let $money0;
@@ -49,37 +46,70 @@ let $money3;
 let $answer4;
 let $money4;
 
-// trying to shorten things down for a cleaner look =================================
+// challenges array =================================
+const challenges = [{
+                  challenge: "Name something you operate by pushing a button",
+                  answers: [["Elevator", 37], ["Telephone", 13], ["Microwave", 10], ["TV", 8], ["Doorbell", 6]]},
+                  {
+                  challenge: "What's the first thing you do after waking up from a nap?",
+                  answers: [["Go To The Bathroom", 21], ["Check The Time", 18], ["Stretch", 15], ["Yawn", 9], ["Get A Drink", 8]]
+                }];
+
+// ================================= ROUND 1 VARIABLE SETTINGS =================================
 const $round1 = () => {
-$question = challenges[0].challenge;
-$answer0 = challenges[0].answers[0][0];
-$money0 = challenges[0].answers[0][1];
-$answer1 = challenges[0].answers[1][0];
-$money1 = challenges[0].answers[1][1];
-$answer2 = challenges[0].answers[2][0];
-$money2 = challenges[0].answers[2][1];
-$answer3 = challenges[0].answers[3][0];
-$money3 = challenges[0].answers[3][1];
-$answer4 = challenges[0].answers[4][0];
-$money4 = challenges[0].answers[4][1];
-// Constructing the string for display on the game board =================================
-$('.question').text($question);
-$('#answer0').text($answer0 + " $" + $money0);
-$('#answer1').text($answer1 + " $" + $money1);
-$('#answer2').text($answer2 + " $" + $money2);
-$('#answer3').text($answer3 + " $" + $money3);
-$('#answer4').text($answer4 + " $" + $money4);
+              $question = challenges[0].challenge;
+              $answer0 = challenges[0].answers[0][0];
+              $money0 = challenges[0].answers[0][1];
+              $answer1 = challenges[0].answers[1][0];
+              $money1 = challenges[0].answers[1][1];
+              $answer2 = challenges[0].answers[2][0];
+              $money2 = challenges[0].answers[2][1];
+              $answer3 = challenges[0].answers[3][0];
+              $money3 = challenges[0].answers[3][1];
+              $answer4 = challenges[0].answers[4][0];
+              $money4 = challenges[0].answers[4][1];
+$stringBuild();
 };
 
+// ================================= ROUND 2 VARIABLE SETTINGS =================================
+const $round2 = () => {
+              $question = challenges[1].challenge;
+              $answer0 = challenges[1].answers[0][0];
+              $money0 = challenges[1].answers[0][1];
+              $answer1 = challenges[1].answers[1][0];
+              $money1 = challenges[1].answers[1][1];
+              $answer2 = challenges[1].answers[2][0];
+              $money2 = challenges[1].answers[2][1];
+              $answer3 = challenges[1].answers[3][0];
+              $money3 = challenges[1].answers[3][1];
+              $answer4 = challenges[1].answers[4][0];
+              $money4 = challenges[1].answers[4][1];
+$stringBuild();
+};
 
+// Constructing the string for display on the game board =================================
+const $stringBuild = () => {
+                  $('.question').text($question);
+                  $('#answer0').text($answer0 + " $" + $money0);
+                  $('#answer1').text($answer1 + " $" + $money1);
+                  $('#answer2').text($answer2 + " $" + $money2);
+                  $('#answer3').text($answer3 + " $" + $money3);
+                  $('#answer4').text($answer4 + " $" + $money4);
+};
+
+// Restting game tiles to default setting and attributes ==================
+const $resetTiles = () => {
+  $('.tile0, .tile1, .tile2, .tile3, .tile4').removeAttr('id');
+}
 
 // Checks for winner each turn =================================
 const winner = () => {
   if (bank >= 99) {
-    alert('You made it to $99! Congrats! YOU WIN!!!!!!!!');
+    alert('You made it to $99! Congrats! YOU WIN!!!!!!!! Resetting board...');
     $('#money').text("$" + 99);
+    location.reload();
   } else if (bank <= 0) {
-    alert('You ran out of money! YOU LOSE!!');
+    alert('You ran out of money! YOU LOSE!! Resetting board...');
     $('#money').text("$" + 0);
     location.reload();
   } else{
@@ -91,6 +121,8 @@ const winner = () => {
 const $checkAllTiles = () => {
   if ($('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
     alert('The board has been cleared. Moving on to the next round!');
+    $resetTiles();
+    $round2();
   } else {
     console.log('checked all tiles');
   }
@@ -115,7 +147,6 @@ $('.survey-says').on('click', (e)=> {
                     winner();
                     $checkAllTiles();
     }
-
     } else if ($inputLowercase === $answer1.toLowerCase()) {
           const $picked = $('.tile1').attr('id');
           if ($picked === 'spin') {
@@ -175,8 +206,6 @@ $('.survey-says').on('click', (e)=> {
             $('#input-box').val('');
             winner();
     }
-
-
 });
 
 

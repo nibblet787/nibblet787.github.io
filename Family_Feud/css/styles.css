@@ -63,7 +63,7 @@ body {
   display: flex;
   align-content: space-between;
   position: relative;
-  bottom: 31.2vw;
+  top: -31.2vw;
   left: 9.3vw;
   width: 31.6vw;
   vertical-align: inherit;
