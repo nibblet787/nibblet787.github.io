@@ -69,16 +69,14 @@ const winner = () => {
   }
 };
 
-const $test = () => {
-      // const $blah = $('.game-tiles').$('img');
-      // console.log($blah);
-      // if ($('.tile0').($('#blah')) === true) {
-      //   alert('You already guessed this answer correctly');
-      // }
-      // else {
-      //   console.log('checked ID');
-      // }
-};
+// let test = [];
+//
+// let blah = () => {
+//   for (i=0; i < test.length; i++) {
+//     let foo = test += [i];
+//     console.log(foo);
+//   }
+// }
 
 // Takes input box and comares it to available answers =================================
 $('.survey-says').on('click', ()=> {
@@ -90,6 +88,9 @@ $('.survey-says').on('click', ()=> {
       bank = bank += $money0;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      test.push(1);
+      console.log(test);
+      // blah();
       winner();
 
     } else if ($inputLowercase === $answer1.toLowerCase()) {
@@ -97,6 +98,8 @@ $('.survey-says').on('click', ()=> {
       bank = bank += $money1;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      test.push(2);
+      console.log(test);
       winner();
 
     } else if ($inputLowercase === $answer2.toLowerCase()) {
@@ -104,6 +107,8 @@ $('.survey-says').on('click', ()=> {
       bank = bank += $money2;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      test.push(3);
+      console.log(test);
       winner();
 
     } else if ($inputLowercase === $answer3.toLowerCase()) {
@@ -111,6 +116,8 @@ $('.survey-says').on('click', ()=> {
       bank = bank += $money3;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      test.push(4);
+      console.log(test);
       winner();
 
     } else if ($inputLowercase === $answer4.toLowerCase()) {
@@ -118,6 +125,9 @@ $('.survey-says').on('click', ()=> {
       bank = bank += $money4;
       $('#money').text("$" + bank);
       $('#input-box').val('');
+      test.push(5);
+      console.log(test);
+      // blah();
       winner();
 
     } else {
