@@ -10,8 +10,8 @@ let bank = 50;
 //                     challenge: "Name something you operate by pushing a button",
 //                     answers: [["Elevator",37], ["Telephone",13], ["Microwave",10], ["TV",8], ["Doorbell",6]
 //                   ]},
-//                     {challenge: "What's the first thing you do after waking up from a nap?",
-//                     answers: [["Go To Bathroom",21], ["Check The Time",18], ["Stretch",15], ["Yawn",9], ["Get A Drink",8]]},
+                    // {challenge: "What's the first thing you do after waking up from a nap?",
+                    // answers: [["Go To Bathroom",21], ["Check The Time",18], ["Stretch",15], ["Yawn",9], ["Get A Drink",8]]},
 //                     {challenge: "Name something people run out of", answers: [["Milk",26], ["Money",22], ["Gas",16], ["Sugar",11], ["Toilet Paper",10]]
 //                   },
 //                   {challenge: "Name something that puts people to sleep", answers: [["Medication",22],["Reading",16],["Music",14],["TV",12],["Milk",8]]
@@ -29,31 +29,49 @@ let bank = 50;
 // };
 
 // challenges array =================================
-const challenges = {
+const challenges = [{
                   challenge: "Name something you operate by pushing a button",
-                  answers: [["Elevator", 37], ["Telephone",13], ["Microwave",10], ["TV",8], ["Doorbell",6]]
-};
+                  answers: [["Elevator", 37], ["Telephone", 13], ["Microwave", 10], ["TV", 8], ["Doorbell", 6]]},
+                  {
+                  challenge: "What's the first thing you do after waking up from a nap?",
+                  answers: [["Go To Bathroom", 21], ["Check The Time", 18], ["Stretch", 15], ["Yawn", 9], ["Get A Drink", 8]]
+                }];
+
+let $question;
+let $answer0;
+let $money0;
+let $answer1;
+let $money1;
+let $answer2;
+let $money2;
+let $answer3;
+let $money3;
+let $answer4;
+let $money4;
 
 // trying to shorten things down for a cleaner look =================================
-let $question = challenges.challenge;
-let $answer0 = challenges.answers[0][0];
-let $money0 = challenges.answers[0][1];
-let $answer1 = challenges.answers[1][0];
-let $money1 = challenges.answers[1][1];
-let $answer2 = challenges.answers[2][0];
-let $money2 = challenges.answers[2][1];
-let $answer3 = challenges.answers[3][0];
-let $money3 = challenges.answers[3][1];
-let $answer4 = challenges.answers[4][0];
-let $money4 = challenges.answers[4][1];
-
+const $round1 = () => {
+$question = challenges[0].challenge;
+$answer0 = challenges[0].answers[0][0];
+$money0 = challenges[0].answers[0][1];
+$answer1 = challenges[0].answers[1][0];
+$money1 = challenges[0].answers[1][1];
+$answer2 = challenges[0].answers[2][0];
+$money2 = challenges[0].answers[2][1];
+$answer3 = challenges[0].answers[3][0];
+$money3 = challenges[0].answers[3][1];
+$answer4 = challenges[0].answers[4][0];
+$money4 = challenges[0].answers[4][1];
 // Constructing the string for display on the game board =================================
-$('.question').text(challenges.challenge);
+$('.question').text($question);
 $('#answer0').text($answer0 + " $" + $money0);
 $('#answer1').text($answer1 + " $" + $money1);
 $('#answer2').text($answer2 + " $" + $money2);
 $('#answer3').text($answer3 + " $" + $money3);
 $('#answer4').text($answer4 + " $" + $money4);
+};
+
+
 
 // Checks for winner each turn =================================
 const winner = () => {
@@ -69,7 +87,17 @@ const winner = () => {
   }
 };
 
+// Check after each successful guess to see if all tiles have been cleared =================
+const $checkAllTiles = () => {
+  if ($('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
+    alert('The board has been cleared. Moving on to the next round!');
+  } else {
+    console.log('checked all tiles');
+  }
+};
 
+
+$round1();
 // Takes input box and compares it to available answers =================================
 $('.survey-says').on('click', (e)=> {
     const $input = $('#input-box').val();
@@ -85,6 +113,7 @@ $('.survey-says').on('click', (e)=> {
                     $('#money').text("$" + bank);
                     $('#input-box').val('');
                     winner();
+                    $checkAllTiles();
     }
 
     } else if ($inputLowercase === $answer1.toLowerCase()) {
@@ -98,6 +127,7 @@ $('.survey-says').on('click', (e)=> {
                     $('#money').text("$" + bank);
                     $('#input-box').val('');
                     winner();
+                    $checkAllTiles();
     }
     } else if ($inputLowercase === $answer2.toLowerCase()) {
           const $picked = $('.tile2').attr('id');
@@ -110,6 +140,7 @@ $('.survey-says').on('click', (e)=> {
                     $('#money').text("$" + bank);
                     $('#input-box').val('');
                     winner();
+                    $checkAllTiles();
     }
     } else if ($inputLowercase === $answer3.toLowerCase()) {
           const $picked = $('.tile3').attr('id');
@@ -122,6 +153,7 @@ $('.survey-says').on('click', (e)=> {
                     $('#money').text("$" + bank);
                     $('#input-box').val('');
                     winner();
+                    $checkAllTiles();
     }
     } else if ($inputLowercase === $answer4.toLowerCase()) {
           const $picked = $('.tile4').attr('id');
@@ -134,6 +166,7 @@ $('.survey-says').on('click', (e)=> {
                     $('#money').text("$" + bank);
                     $('#input-box').val('');
                     winner();
+                    $checkAllTiles();
     }
     } else {
             const $byeMoney = $('<h1>').appendTo('.bank').text('-10').addClass('wrongAnswer').fadeOut(1000);
