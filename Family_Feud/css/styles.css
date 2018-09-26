@@ -253,7 +253,7 @@ aside > h3 {
   top: 17.5vw;
   font-size: 6vw;
   font-weight: bold;
-  z-index: 7;
+  z-index: 1;
   animation-name: fadeOutUp;
   animation-duration: 1s;
 }

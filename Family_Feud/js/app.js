@@ -69,72 +69,72 @@ const winner = () => {
   }
 };
 
-// let test = [];
-//
-// let blah = () => {
-//   for (i=0; i < test.length; i++) {
-//     let foo = test += [i];
-//     console.log(foo);
-//   }
-// }
 
-const $bar = () => {
-  $('#money').removeClass('wrongAnswer');
-};
-
-// Takes input box and comares it to available answers =================================
-$('.survey-says').on('click', ()=> {
+// Takes input box and compares it to available answers =================================
+$('.survey-says').on('click', (e)=> {
     const $input = $('#input-box').val();
-    // $bar();
     const $inputLowercase = $input.toLowerCase();
     if ($inputLowercase === $answer0.toLowerCase()) {
-      // $test();
-      $('.tile0').attr('id', 'spin');
-      bank = bank += $money0;
-      $('#money').text("$" + bank);
-      $('#input-box').val('');
-      test.push(1);
-      console.log(test);
-      // blah();
-      winner();
+          const $picked = $('.tile0').attr('id');
+          if ($picked === 'spin') {
+              alert('Pick something else');
+              $('#input-box').val('');
+      }       else {
+                    $('.tile0').attr('id', 'spin');
+                    bank = bank += $money0;
+                    $('#money').text("$" + bank);
+                    $('#input-box').val('');
+                    winner();
+    }
 
     } else if ($inputLowercase === $answer1.toLowerCase()) {
-      $('.tile1').attr('id', 'spin');
-      bank = bank += $money1;
-      $('#money').text("$" + bank);
-      $('#input-box').val('');
-      test.push(2);
-      console.log(test);
-      winner();
-
+          const $picked = $('.tile1').attr('id');
+          if ($picked === 'spin') {
+              alert('Pick something else');
+              $('#input-box').val('');
+      }       else {
+                    $('.tile1').attr('id', 'spin');
+                    bank = bank += $money1;
+                    $('#money').text("$" + bank);
+                    $('#input-box').val('');
+                    winner();
+    }
     } else if ($inputLowercase === $answer2.toLowerCase()) {
-      $('.tile2').attr('id', 'spin');
-      bank = bank += $money2;
-      $('#money').text("$" + bank);
-      $('#input-box').val('');
-      test.push(3);
-      console.log(test);
-      winner();
-
+          const $picked = $('.tile2').attr('id');
+          if ($picked === 'spin') {
+              alert('Pick something else');
+              $('#input-box').val('');
+      }       else {
+                    $('.tile2').attr('id', 'spin');
+                    bank = bank += $money2;
+                    $('#money').text("$" + bank);
+                    $('#input-box').val('');
+                    winner();
+    }
     } else if ($inputLowercase === $answer3.toLowerCase()) {
-      $('.tile3').attr('id', 'spin');
-      bank = bank += $money3;
-      $('#money').text("$" + bank);
-      $('#input-box').val('');
-      test.push(4);
-      console.log(test);
-      winner();
-
+          const $picked = $('.tile3').attr('id');
+          if ($picked === 'spin') {
+              alert('Pick something else');
+              $('#input-box').val('');
+      }       else {
+                    $('.tile3').attr('id', 'spin');
+                    bank = bank += $money3;
+                    $('#money').text("$" + bank);
+                    $('#input-box').val('');
+                    winner();
+    }
     } else if ($inputLowercase === $answer4.toLowerCase()) {
-      $('.tile4').attr('id', 'spin');
-      bank = bank += $money4;
-      $('#money').text("$" + bank);
-      $('#input-box').val('');
-      test.push(5);
-      console.log(test);
-      // blah();
-      winner();
-
+          const $picked = $('.tile4').attr('id');
+          if ($picked === 'spin') {
+              alert('Pick something else');
+              $('#input-box').val('');
+      }       else {
+                    $('.tile4').attr('id', 'spin');
+                    bank = bank += $money4;
+                    $('#money').text("$" + bank);
+                    $('#input-box').val('');
+                    winner();
+    }
     } else {
             const $byeMoney = $('<h1>').appendTo('.bank').text('-10').addClass('wrongAnswer').fadeOut(1000);
             bank = bank -= 10;
