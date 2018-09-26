@@ -1,9 +1,9 @@
 // console.log('this is app.js');
 
-
-// $(() => {
 let bank = 50;
-let newBank = 0;
+let newBank = 50;
+
+$(() => {
 
 
 // const challenges = [{
@@ -58,37 +58,38 @@ $('.survey-says').on('click', ()=> {
     const $inputLowercase = $input.toLowerCase();
     if ($inputLowercase === $answer0.toLowerCase()) {
       $('.tile0').attr('id', 'spin');
-      let newBank = bank + $money0;
-      $('#money').text("$" + newBank);
+      bank = bank += $money0;
+      $('#money').text("$" + bank);
       $('#input-box').val('');
+      console.log(newBank);
 
     } else if ($inputLowercase === $answer1.toLowerCase()) {
       $('.tile1').attr('id', 'spin');
-      let newBank = bank + $money1;
-      $('#money').text(newBank);
+      bank = bank += $money1;
+      $('#money').text("$" + bank);
       $('#input-box').val('');
 
     } else if ($inputLowercase === $answer2.toLowerCase()) {
       $('.tile2').attr('id', 'spin');
-      let newBank = bank + $money2;
-      $('#money').text(newBank);
+      bank = bank += $money2;
+      $('#money').text("$" + bank);
       $('#input-box').val('');
 
     } else if ($inputLowercase === $answer3.toLowerCase()) {
       $('.tile3').attr('id', 'spin');
-      let newBank = bank + $money3;
-      $('#money').text(newBank);
+      bank = bank += $money3;
+      $('#money').text("$" + bank);
       $('#input-box').val('');
 
     } else if ($inputLowercase === $answer4.toLowerCase()) {
       $('.tile4').attr('id', 'spin');
-      let newBank = bank + $money4;
-      $('#money').text(newBank);
+      bank = bank += $money4;
+      $('#money').text("$" + bank);
       $('#input-box').val('');
 
     } else {
-            const bank = newBank - 10;
-            $('#money').text(newBank);
+            bank = bank -= 10;
+            $('#money').text("$" + bank);
             $('#input-box').val('');
     }
 
@@ -130,4 +131,4 @@ $('.survey-says').on('click', ()=> {
 
 
 
-// });
+});
