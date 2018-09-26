@@ -62,17 +62,19 @@ const winner = () => {
     $('#money').text("$" + 99);
   } else if (bank <= 0) {
     alert('You ran out of money! YOU LOSE!!');
+    $('#money').text("$" + 0);
+    location.reload();
   } else{
     console.log('checked for win or lose');
   }
 };
 
 const $test = () => {
-      let blah = document.getElementsByTagName("img").getAttribute('id');
-      console.log(blah);
-      // if (blah === '#blah') {
+      // const $blah = $('.game-tiles').$('img');
+      // console.log($blah);
+      // if ($('.tile0').($('#blah')) === true) {
       //   alert('You already guessed this answer correctly');
-      // } return;
+      // }
       // else {
       //   console.log('checked ID');
       // }
@@ -83,7 +85,7 @@ $('.survey-says').on('click', ()=> {
     const $input = $('#input-box').val();
     const $inputLowercase = $input.toLowerCase();
     if ($inputLowercase === $answer0.toLowerCase()) {
-      $test();
+      // $test();
       $('.tile0').attr('id', 'spin');
       bank = bank += $money0;
       $('#money').text("$" + bank);
