@@ -37,8 +37,8 @@
 // $player1Bank = $parseInt();
 // console.log($player1Bank);
 let $player2Bank = $('.currentPlayer').text();
-console.log(typeof $player2Bank);
-let bank = 50;
+// console.log(typeof $player2Bank);
+let $bank = 50;
 let $question;
 let $answer0;
 let $money0;
@@ -74,6 +74,7 @@ const $round1 = () => {
               $answer4 = challenges[0].answers[4][0];
               $money4 = challenges[0].answers[4][1];
 $stringBuild();
+console.log($money3);
 };
 
 // ================================= ROUND 2 VARIABLE SETTINGS =================================
@@ -109,11 +110,12 @@ const $resetTiles = () => {
 
 // Checks for winner each turn =================================
 const winner = () => {
-  if (bank >= 99) {
-    alert('You made it to $99! Congrats! YOU WIN!!!!!!!! Resetting board...');
-    $('#money').text("$" + 99);
+  if ($bank >= 99) {
+    alert($('.currentPlayer') + ' made it to $99! Congrats! YOU WIN!!!!!!!! Resetting board...');
+    $('.currentPlayer').text("$" + 99);
     location.reload();
-  } else if (bank <= 0) {
+    console.log('wtf');
+  } else if ($bank <= 0) {
     alert('You ran out of money! YOU LOSE!! Resetting board...');
     $('#money').text("$" + 0);
     location.reload();
@@ -124,7 +126,7 @@ const winner = () => {
 
 // Check after each successful guess to see if all tiles have been cleared =================
 const $checkAllTiles = () => {
-  if (bank < 99 && $('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
+  if ($bank < 99 && $('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
     alert('The board has been cleared. Moving on to the next round!');
     $resetTiles();
     $round2();
@@ -138,12 +140,11 @@ const $playerSwitch = () => {
   const $player1 = $('#player1-money')
   const $player2 = $('#player2-money')
   if ($player1.attr('class') === 'currentPlayer') {
-    $player1.removeClass('currentPlayer').addClass('other');
-    $player2.removeClass().addClass('currentPlayer');
-
+    $player1.removeClass('currentPlayer').addClass('other').css('color', 'white');
+    $player2.removeClass().addClass('currentPlayer').css('color', 'cyan');
   } else if ($player2.attr('class') === 'currentPlayer') {
-    $player2.removeClass('currentPlayer').addClass('other');
-    $player1.removeClass().addClass('currentPlayer');
+    $player2.removeClass('currentPlayer').addClass('other').css('color', 'white');
+    $player1.removeClass().addClass('currentPlayer').css('color', 'cyan');
   } else {
     console.log('switching players');
   }
@@ -160,8 +161,9 @@ $('.survey-says').on('click', (e)=> {
               $('#input-box').val(''); // clears input box for next word
       }       else {
                     $('.tile0').attr('id', 'spin');
-                    // let $bank =
-                    bank = bank += $money0;
+                    $currentMoney = $('.currentPlayer').text().replace('$','');
+                    $parse = parseInt($currentMoney, 10);
+                    bank = $parse + $money0;
                     $('.currentPlayer').text("$" + bank); //updates current bank account
                     $('#input-box').val('');
                     winner();
@@ -175,11 +177,14 @@ $('.survey-says').on('click', (e)=> {
               $('#input-box').val('');
       }       else {
                     $('.tile1').attr('id', 'spin');
-                    bank = bank += $money1;
-                    $('.currentPlayer').text("$" + bank);
+                    $currentMoney = $('.currentPlayer').text().replace('$','');
+                    $parse = parseInt($currentMoney, 10);
+                    $bank = $parse + $money1;
+                    $('.currentPlayer').text("$" + $bank);
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
+                    $playerSwitch();
     }
     } else if ($inputLowercase === $answer2.toLowerCase()) {
           const $picked = $('.tile2').attr('id');
@@ -188,11 +193,14 @@ $('.survey-says').on('click', (e)=> {
               $('#input-box').val('');
       }       else {
                     $('.tile2').attr('id', 'spin');
-                    bank = bank += $money2;
-                    $('.currentPlayer').text("$" + bank);
+                    $currentMoney = $('.currentPlayer').text().replace('$','');
+                    $parse = parseInt($currentMoney, 10);
+                    $bank = $parse + $money2;
+                    $('.currentPlayer').text("$" + $bank);
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
+                    $playerSwitch();
     }
     } else if ($inputLowercase === $answer3.toLowerCase()) {
           const $picked = $('.tile3').attr('id');
@@ -201,11 +209,14 @@ $('.survey-says').on('click', (e)=> {
               $('.currentPlayer').val('');
       }       else {
                     $('.tile3').attr('id', 'spin');
-                    bank = bank += $money3;
-                    $('#money').text("$" + bank);
+                    $currentMoney = $('.currentPlayer').text().replace('$','');
+                    $parse = parseInt($currentMoney, 10);
+                    bank = $parse + $money3;
+                    $('.currentPlayer').text("$" + bank);
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
+                    $playerSwitch();
     }
     } else if ($inputLowercase === $answer4.toLowerCase()) {
           const $picked = $('.tile4').attr('id');
@@ -214,19 +225,24 @@ $('.survey-says').on('click', (e)=> {
               $('.currentPlayer').val('');
       }       else {
                     $('.tile4').attr('id', 'spin');
-                    bank = bank += $money4;
-                    $('#money').text("$" + bank);
+                    $currentMoney = $('.currentPlayer').text().replace('$','');
+                    $parse = parseInt($currentMoney, 10);
+                    $bank = $parse + $money4;
+                    $('.currentPlayer').text("$" + $bank);
                     $('#input-box').val('');
                     winner();
                     $checkAllTiles();
                     $playerSwitch();
     }
     } else {
-            const $byeMoney = $('<h1>').appendTo('.currentPlayer').text('-10').addClass('wrongAnswer').fadeOut(1000);
-            bank = bank -= 10;
-            $('.currentPlayer').text("$" + bank);
+            // const $byeMoney = $('<h1>');
+            // $('.bank').append('h1');
+            // $('h1').text('-10').addClass('wrongAnswer');
+            $currentMoney = $('.currentPlayer').text().replace('$','');
+            $bank = ($currentMoney -= 10);
+            $('.currentPlayer').text("$" + $bank);
             $('#input-box').val('');
-            $('.bank').remove('h1');
+            // // // $('.bank').remove('h1');
             winner();
             $playerSwitch();
     }
@@ -236,10 +252,10 @@ $('.survey-says').on('click', (e)=> {
 $round1();
 
 
+// .fadeOut(1000)
 
 
-
-
+// parseInt()
 
 
 

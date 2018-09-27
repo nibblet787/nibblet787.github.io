@@ -207,7 +207,7 @@ footer > a {
   background-color: black;
   border: 10px solid rgb(251,203,65);
   border-radius: 12px;
-  /* color: white; */
+  color: cyan;
   text-align: center;
   font-size: 6vw;
   font-weight: bold;
@@ -224,7 +224,7 @@ footer > a {
   background-color: black;
   border: 10px solid rgb(251,203,65);
   border-radius: 12px;
-  /* color: white; */
+  color: white;
   text-align: center;
   font-size: 6vw;
   font-weight: bold;
@@ -259,15 +259,15 @@ aside > h2 {
   z-index: 7;
 }
 
-.currentPlayer {
+/* .currentPlayer {
   color: cyan;
   opacity: 1;
   animation: fade 3s infinite;
-}
+} */
 
-.other {
+/* .other {
   color: white;
-}
+} */
 
 .wrongAnswer {
   color: red;
