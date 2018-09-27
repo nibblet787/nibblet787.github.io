@@ -36,15 +36,15 @@ const challenges = [{
                   answers: [["Get Up", 31], ["Shave", 16], ["Go To Work", 14], ["Exercise", 10], ["Clean", 9]]
                 },
                 {
-                  challenges: "Tell us something a mother says to her child over and over again",
+                  challenge: "Tell us something a mother says to her child over and over again",
                   answers: [["No", 30], ["Don't", 15], ["I Love You", 10], ["Be Quiet", 8], ["Clean Your Room", 7]]
                 },
                 {
-                  challenges: "Name something in the house that is very difficult to move",
+                  challenge: "Name something in the house that is very difficult to move",
                   answers: [["Refrigerator", 42], ["Piano", 14], ["Couch", 12], ["Bed", 9], ["Dresser", 5]]
                 },
                 {
-                  challenges: "Name something you put a dust cover over",
+                  challenge: "Name something you put a dust cover over",
                   answers: [["Blu-ray player", 31], ["Typewriter", 18], ["Toaster", 12], ["Car", 9], ["Stereo", 7]]
                 }
               ];
@@ -191,17 +191,17 @@ const $stringBuild = () => {
 const $rando = () => {
   let gamePicker = Math.ceil(Math.random() * 7);
   console.log(gamePicker);
-  if (gamePicker = 1) {
+  if (gamePicker === 1) {
     $round1();
-  } else if (gamePicker = 2) {
+  } else if (gamePicker === 2) {
     $round2();
-  } else if (gamePicker = 3) {
+  } else if (gamePicker === 3) {
     $round3();
-  } else if (gamePicker = 4) {
+  } else if (gamePicker === 4) {
     $round4();
-  } else if (gamePicker = 5) {
+  } else if (gamePicker === 5) {
     $round5();
-  } else if (gamePicker = 6) {
+  } else if (gamePicker === 6) {
     $round6();
   } else {
     $round7();
@@ -241,7 +241,7 @@ const $checkAllTiles = () => {
   }
 };
 
-// Switch Current Player status from one to another ===================
+// Switch "Current Player" status from one to another ===================
 const $playerSwitch = () => {
   const $player1 = $('#Player1')
   const $player2 = $('#Player2')
@@ -255,14 +255,14 @@ const $playerSwitch = () => {
     console.log('switching players');
   }
 };
-// $playerSwitch();
+
 // Takes input box and compares it to available answers =================================
 $('.survey-says').on('click', (e)=> {
     const $input = $('#input-box').val();
     const $inputLowercase = $input.toLowerCase(); // convert to lower case so no errors on input
     if ($inputLowercase === $answer0.toLowerCase()) {
           const $picked = $('.tile0').attr('id');
-          if ($picked === 'spin') { // an ID of 'spin' enables the animation
+          if ($picked === 'spin') { // an ID of 'spin' enables the CSS animation
               alert('Pick something else');
               $('#input-box').val(''); // clears input box for next word
       }       else {
@@ -355,14 +355,9 @@ $('.survey-says').on('click', (e)=> {
 });
 
 // Game Start =========================
-// $round1();
 $rando();
 
-// .fadeOut(1000)
-
-
-// parseInt()
-
+// $round5();
 
 
 
