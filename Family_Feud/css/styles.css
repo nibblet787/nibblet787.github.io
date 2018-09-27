@@ -268,12 +268,12 @@ aside > h2 {
   color: white;
 } */
 
-.wrongAnswer {
+#Player1 > .wrongAnswer {
   color: red;
   text-align: center;
   position: absolute;
-  left: 73.2vw;
-  top: 6.6vw;
+  left: 2.5vw;
+  top: -4vw;
   font-size: 6vw;
   font-weight: bold;
   z-index: 7;
@@ -281,7 +281,18 @@ aside > h2 {
   animation-duration: 1s;
 }
 
-
+#Player2 > .wrongAnswer {
+  color: red;
+  text-align: center;
+  position: absolute;
+  left: 2.5vw;
+  top: -4vw;
+  font-size: 6vw;
+  font-weight: bold;
+  z-index: 7;
+  animation-name: fadeOutUp;
+  animation-duration: 1s;
+}
 
 @keyframes fadeOutUp {
    0% {

@@ -215,7 +215,7 @@ const $resetTiles = () => {
 
 // Checks for winner each turn =================================
 const winner = () => {
-  if ($bank >= 99) {
+  if ($bank > 98) {
     alert($('.currentPlayer').attr('id') + ' made it to $99! Congrats! THEY WIN!!!!!!!! Resetting board...');
     $('.currentPlayer').text("$" + 99);
     location.reload();
@@ -228,7 +228,6 @@ const winner = () => {
     console.log('checked for win or lose');
   }
 };
-
 
 // Check after each successful guess to see if all tiles have been cleared =================
 const $checkAllTiles = () => {
@@ -254,6 +253,11 @@ const $playerSwitch = () => {
   } else {
     console.log('switching players');
   }
+};
+
+// Creates animation for when money is deducted from player bank =============
+const $byeMoney = () => {
+  const $byeMoney = $('<h1>').text('-10').addClass('wrongAnswer').appendTo('.currentPlayer').fadeOut(1000);
 };
 
 // Takes input box and compares it to available answers =================================
@@ -312,7 +316,7 @@ $('.survey-says').on('click', (e)=> {
           const $picked = $('.tile3').attr('id');
           if ($picked === 'spin') {
               alert('Pick something else');
-              $('.currentPlayer').val('');
+              $('#input-box').val('');
       }       else {
                     $('.tile3').attr('id', 'spin');
                     $currentMoney = $('.currentPlayer').text().replace('$','');
@@ -328,7 +332,7 @@ $('.survey-says').on('click', (e)=> {
           const $picked = $('.tile4').attr('id');
           if ($picked === 'spin') {
               alert('Pick something else');
-              $('.currentPlayer').val('');
+              $('#input-box').val('');
       }       else {
                     $('.tile4').attr('id', 'spin');
                     $currentMoney = $('.currentPlayer').text().replace('$','');
@@ -341,14 +345,13 @@ $('.survey-says').on('click', (e)=> {
                     $playerSwitch();
     }
     } else {
-            // const $byeMoney = $('<h1>');
-            // $('.bank').append('h1');
-            // $('h1').text('-10').addClass('wrongAnswer');
             $currentMoney = $('.currentPlayer').text().replace('$','');
-            $bank = ($currentMoney -= 10);
+            $parse = parseInt($currentMoney, 10);
+            console.log(typeof $parse);
+            $bank = $parse - 10;
             $('.currentPlayer').text("$" + $bank);
             $('#input-box').val('');
-            // // // $('.bank').remove('h1');
+            $byeMoney();
             winner();
             $playerSwitch();
     }
@@ -356,22 +359,5 @@ $('.survey-says').on('click', (e)=> {
 
 // Game Start =========================
 $rando();
-
-// $round5();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // });
