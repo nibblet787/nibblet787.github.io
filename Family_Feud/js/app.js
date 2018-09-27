@@ -179,15 +179,15 @@ $stringBuild();
 
 // Constructing the string for display on the game board =================================
 const $stringBuild = () => {
-                  $('.question').text($question);
-                  $('#answer0').text($answer0 + " $" + $money0);
-                  $('#answer1').text($answer1 + " $" + $money1);
-                  $('#answer2').text($answer2 + " $" + $money2);
-                  $('#answer3').text($answer3 + " $" + $money3);
-                  $('#answer4').text($answer4 + " $" + $money4);
+              $('.question').text($question);
+              $('#answer0').text($answer0 + " $" + $money0);
+              $('#answer1').text($answer1 + " $" + $money1);
+              $('#answer2').text($answer2 + " $" + $money2);
+              $('#answer3').text($answer3 + " $" + $money3);
+              $('#answer4').text($answer4 + " $" + $money4);
 };
 
-// Randomizer for game rounds, both starting and in-game ==============================
+// Randomizer for game rounds ==============================
 const $rando = () => {
   let gamePicker = Math.ceil(Math.random() * 7);
   console.log(gamePicker);
