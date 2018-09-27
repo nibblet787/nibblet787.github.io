@@ -111,12 +111,12 @@ const $resetTiles = () => {
 // Checks for winner each turn =================================
 const winner = () => {
   if ($bank >= 99) {
-    alert($('.currentPlayer') + ' made it to $99! Congrats! YOU WIN!!!!!!!! Resetting board...');
+    alert($('.currentPlayer').attr('id') + ' made it to $99! Congrats! THEY WIN!!!!!!!! Resetting board...');
     $('.currentPlayer').text("$" + 99);
     location.reload();
     console.log('wtf');
   } else if ($bank <= 0) {
-    alert('You ran out of money! YOU LOSE!! Resetting board...');
+    alert($('.currentPlayer').attr('id') + ' ran out of money! THEY LOSE!! Resetting board...');
     $('#money').text("$" + 0);
     location.reload();
   } else{
@@ -137,14 +137,16 @@ const $checkAllTiles = () => {
 
 // Switch Current Player status from one to another ===================
 const $playerSwitch = () => {
-  const $player1 = $('#player1-money')
-  const $player2 = $('#player2-money')
+  const $player1 = $('#Player1')
+  const $player2 = $('#Player2')
   if ($player1.attr('class') === 'currentPlayer') {
-    $player1.removeClass('currentPlayer').addClass('other').css('color', 'white');
-    $player2.removeClass().addClass('currentPlayer').css('color', 'cyan');
+            console.log($('.currentPlayer').attr('id'));
+            $player1.removeClass('currentPlayer').addClass('other').css('color', 'white');
+            $player2.removeClass().addClass('currentPlayer').css('color', 'cyan');
   } else if ($player2.attr('class') === 'currentPlayer') {
-    $player2.removeClass('currentPlayer').addClass('other').css('color', 'white');
-    $player1.removeClass().addClass('currentPlayer').css('color', 'cyan');
+            console.log($('.currentPlayer').attr('id'));
+            $player2.removeClass('currentPlayer').addClass('other').css('color', 'white');
+            $player1.removeClass().addClass('currentPlayer').css('color', 'cyan');
   } else {
     console.log('switching players');
   }
