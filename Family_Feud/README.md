@@ -6,4 +6,4 @@ I originally built it as a single player experience. I used variables set to an 
 
 Live link: http://rickchristenhusz.com/Family_Feud/ No installation required.
 
-Unsolved problems include non-optimization of code. I wanted to separate my js code across multiple files for readability purposes, but when I tried it, I immediately ran into code breaking issues. I know it can be done, but we haven't learned that part yet. And since it wasn't technically necessary, I skipped it in order to focus on most functional improvements.
+Unsolved problems include non-optimization of code. I wanted to separate my js code across multiple files for readability purposes, but when I tried it, I immediately ran into code breaking issues. I know it can be done, but we haven't learned that part yet. And since it wasn't technically necessary, I skipped it in order to focus on more functional improvements.
