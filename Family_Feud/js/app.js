@@ -247,10 +247,10 @@ const $playerSwitch = () => {
   const $player2 = $('#Player2')
   if ($player1.attr('class') === 'currentPlayer') {
             $player1.removeClass('currentPlayer').addClass('other').css('color', 'white');
-            $player2.removeClass().addClass('currentPlayer').css('color', 'cyan');
+            $player2.removeClass().addClass('currentPlayer').css('color', 'blue');
   } else if ($player2.attr('class') === 'currentPlayer') {
             $player2.removeClass('currentPlayer').addClass('other').css('color', 'white');
-            $player1.removeClass().addClass('currentPlayer').css('color', 'cyan');
+            $player1.removeClass().addClass('currentPlayer').css('color', 'blue');
   } else {
     console.log('switching players');
   }

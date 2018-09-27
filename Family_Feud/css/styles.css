@@ -11,6 +11,7 @@ body {
   padding: 0;
 }
 
+/* Reset button */
 #start-over > a {
   text-align: center;
   background-color: rgb(251,203,65);
@@ -35,8 +36,6 @@ body {
   width: 50%;
   margin: -3vw 12vw;
   position: relative;
-  /* z-index: 2; */
-
 }
 
 .game-box > img {
@@ -74,14 +73,12 @@ body {
   width: 31vw;
   margin: 3.4vw 0;
   display: flex;
-  /* align-content: space-between; */
   justify-content: flex-end;
   position: relative;
   bottom: 60.5vw;
   left: 9vw;
   color: white;
   text-align: right;
-  /* right: 30vw; */
   font-weight: bold;
   font-size: 2vw;
   font-weight: bold;
@@ -108,7 +105,6 @@ body {
 
 .survey-says {
   width: 16vw;
-  /* height: 5vw; */
   text-align: center;
   background-color: rgb(251,203,65);
   font-size: 1.6vw;
@@ -117,7 +113,6 @@ body {
   border-radius: 12px;
   color: white;
   text-shadow: #000000 1px 0 10px;
-  /* margin: 0 auto; */
   position: relative;
   top: -8.6vw;
   right: 6.2vw;
@@ -137,7 +132,7 @@ button:hover {
   color: black;
 }
 
-footer > a {
+.credits a {
   color: white;
   font-size: 2vw;
   text-align: center;
@@ -147,8 +142,8 @@ footer > a {
   margin: 0;
   padding: 0;
   position: relative;
-  top: -11.3vw;
-  right: 22vw;
+  top: -1.3vw;
+  left: 60vw;
 }
 
 #spin {
@@ -181,13 +176,10 @@ footer > a {
 .rules > p {
   width: 25vw;
   height: 12vw;
-  /* background-color: rgb(251,203,65); */
-  /* border: 3px solid brown; */
-  /* border-radius: 12px; */
   position: relative;
-  top: 61vw;
+  top: 63vw;
   left: 1.2vw;
-  text-align: justify;
+  text-align: center;
   padding: 1vw;
   font-size: 1.3vw;
   font-weight: bold;
@@ -207,7 +199,8 @@ footer > a {
   background-color: black;
   border: 10px solid rgb(251,203,65);
   border-radius: 12px;
-  color: cyan;
+  color: blue;
+  text-shadow: #FFFFFF 1px 0 5px;
   text-align: center;
   font-size: 6vw;
   font-weight: bold;
@@ -225,6 +218,7 @@ footer > a {
   border: 10px solid rgb(251,203,65);
   border-radius: 12px;
   color: white;
+  text-shadow: #FFFFFF 1px 0 5px;
   text-align: center;
   font-size: 6vw;
   font-weight: bold;
@@ -259,11 +253,11 @@ aside > h2 {
   z-index: 7;
 }
 
-/* .currentPlayer {
-  color: cyan;
-  opacity: 1;
-  animation: fade 3s infinite;
-} */
+.currentPlayer {
+  /* color: cyan; */
+  background: black;
+  animation: fade 6s infinite;
+}
 
 /* .other {
   color: white;
@@ -296,11 +290,14 @@ aside > h2 {
 }
 
 @keyframes fade {
-  0%,100% { opacity: .3 }
-  50% { opacity: 1 }
+  0%,100% { background: white; }
+  50% { background: black; }
 }
 
-
+/* @keyframes fade {
+  0%,100% { opacity: .3 }
+  50% { opacity: 1 }
+} */
 
 
 
