@@ -31,6 +31,11 @@ body {
   padding: .3vw 1vw;
 }
 
+#start-over:hover > a {
+  background-color: white;
+  color: black;
+}
+
 .logo > img {
   display: inline-block;
   width: 50%;
@@ -290,8 +295,8 @@ aside > h2 {
 }
 
 @keyframes fade {
-  0%,100% { background: white; }
-  50% { background: black; }
+  0%,100% { background: white; text-shadow: #000000 1px 0 7px}
+  50% { background: black; text-shadow: #FFFFFF 1px 0 5px}
 }
 
 /* @keyframes fade {
