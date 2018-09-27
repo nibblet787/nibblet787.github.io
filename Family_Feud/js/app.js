@@ -41,11 +41,11 @@ const challenges = [{
                 },
                 {
                   challenges: "Name something in the house that is very difficult to move",
-                  answers: [["Refrigerator", 42], ["Piano", 14], ["Couch", 12], ["Bed", 9], ["Dresser",5]]
+                  answers: [["Refrigerator", 42], ["Piano", 14], ["Couch", 12], ["Bed", 9], ["Dresser", 5]]
                 },
                 {
-                  challenges: "Name something you put a dust cover over"
-                  answers: [["Blu-ray player", 31], ["Typewriter", 18], ["Toaster", 12], ["Car", 9], ["Stereo",7]]
+                  challenges: "Name something you put a dust cover over",
+                  answers: [["Blu-ray player", 31], ["Typewriter", 18], ["Toaster", 12], ["Car", 9], ["Stereo", 7]]
                 }
               ];
 
