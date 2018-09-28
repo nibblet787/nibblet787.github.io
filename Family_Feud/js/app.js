@@ -218,18 +218,15 @@ const $resetTiles = () => {
 const winner = () => {
     if ($bank > 98) {
       $('.question').text($currentPlayer + ' made it to $99! Congrats! THEY WIN!!!!!!!! Click \'RESET\' to play again.').removeClass().addClass('no-money');
+      $('.reset').removeClass().addClass('clickReset'); // Causes reset to flash
       $('.survey-says').off(); // Prevents player from continuing to play without resetting
-      // alert($('.currentPlayer').attr('id') + ' made it to $99! Congrats! THEY WIN!!!!!!!! Resetting board...');
       $('.currentPlayer').text("$" + 99);
-      // location.reload();
     } else if ($bank <= 0) {
       $('.tile0, .tile1, .tile2, .tile3, .tile4').attr('id', 'spin');
       $('.question').html($currentPlayer + ' ran out of money! THEY LOSE!!<br/>Click \'RESET\' to play again.').removeClass().addClass('no-money');
-      $('.reset').removeClass().addClass('clickReset');
+      $('.reset').removeClass().addClass('clickReset'); // Causes reset to flash
       $('.survey-says').off(); // Prevents player from continuing to play without resetting
-      // alert($('.currentPlayer').attr('id') + ' ran out of money! THEY LOSE!! Resetting board...');
       $('.currentPlayer').text("$" + 0);
-      // location.reload();
     } else{
       console.log('checked for win or lose');
     }
@@ -238,7 +235,6 @@ const winner = () => {
 // Check after each successful guess to see if all tiles have been cleared =================
 const $checkAllTiles = () => {
     if ($bank < 99 && $('.tile0').attr('id') === 'spin' && $('.tile1').attr('id') === 'spin' && $('.tile2').attr('id') === 'spin' && $('.tile3').attr('id') === 'spin' && $('.tile4').attr('id') === 'spin') {
-      // $('.question').text('The board has been cleared. Moving on to the next round!').removeClass().addClass('no-money');
       alert('The board has been cleared. Moving on to the next round!');
       $resetTiles();
       $round8();
