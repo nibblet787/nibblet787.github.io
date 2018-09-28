@@ -182,7 +182,7 @@ button:hover {
   width: 25vw;
   height: 12vw;
   position: relative;
-  top: 63vw;
+  top: 64vw;
   left: 1.2vw;
   text-align: center;
   padding: 1vw;
@@ -310,10 +310,6 @@ aside > h2 {
   50% { background: black; text-shadow: #FFFFFF 1px 0 5px}
 }
 
-/* @keyframes fade {
-  0%,100% { opacity: .3 }
-  50% { opacity: 1 }
-} */
 
 
 
