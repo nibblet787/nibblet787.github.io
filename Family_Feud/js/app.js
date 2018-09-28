@@ -225,6 +225,7 @@ const winner = () => {
     } else if ($bank <= 0) {
       $('.tile0, .tile1, .tile2, .tile3, .tile4').attr('id', 'spin');
       $('.question').html($currentPlayer + ' ran out of money! THEY LOSE!!<br/>Click \'RESET\' to play again.').removeClass().addClass('no-money');
+      $('.reset').removeClass().addClass('clickReset');
       $('.survey-says').off(); // Prevents player from continuing to play without resetting
       // alert($('.currentPlayer').attr('id') + ' ran out of money! THEY LOSE!! Resetting board...');
       $('.currentPlayer').text("$" + 0);

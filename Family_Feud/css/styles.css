@@ -31,6 +31,11 @@ body {
   padding: .3vw 1vw;
 }
 
+.clickReset {
+  background: gold;
+  animation: fadeReset 4s infinite;
+}
+
 #start-over:hover > a {
   background-color: white;
   color: black;
@@ -332,7 +337,10 @@ aside > h2 {
   50% { background: black; text-shadow: #828282 1px 0 5px}
 }
 
-
+@keyframes fadeReset {
+  0%,100% { background: gold; text-shadow: #000000 1px 0 7px}
+  50% { background: black; text-shadow: #828282 1px 0 5px}
+}
 
 
 
