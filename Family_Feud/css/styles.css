@@ -192,7 +192,7 @@ button:hover {
   font-size: 2vw;
   font-weight: bold;
   color: black;
-  text-shadow: #000000 1px 0 5px;
+  text-shadow: #828282 1px 0 5px;
   display: flex;
   align-items: center;
   z-index: 3;
@@ -329,7 +329,7 @@ aside > h2 {
 
 @keyframes fade {
   0%,100% { background: white; text-shadow: #000000 1px 0 7px}
-  50% { background: black; text-shadow: #FFFFFF 1px 0 5px}
+  50% { background: black; text-shadow: #828282 1px 0 5px}
 }
 
 
