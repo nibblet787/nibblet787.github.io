@@ -178,6 +178,27 @@ button:hover {
   overflow: hidden;
 }
 
+.question-box > .no-money {
+  width: 25vw;
+  height: 12vw;
+  background-color: white;
+  border: 3px solid brown;
+  border-radius: 12px;
+  position: relative;
+  top: 64vw;
+  left: 1.2vw;
+  text-align: center;
+  padding: 1vw;
+  font-size: 2vw;
+  font-weight: bold;
+  color: black;
+  text-shadow: #000000 1px 0 5px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  overflow: hidden;
+}
+
 .rules > p {
   width: 25vw;
   height: 12vw;
@@ -293,6 +314,7 @@ aside > h2 {
   animation-name: fadeOutUp;
   animation-duration: 1s;
 }
+
 
 @keyframes fadeOutUp {
    0% {
