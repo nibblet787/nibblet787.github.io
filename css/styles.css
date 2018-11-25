@@ -1,3 +1,114 @@
 body {
-  background-color: rgb(121, 3, 3);
+  font-size: 62.5%;
+  font-style: Arial;
+  background-image: url('https://i.imgur.com/9Iz55JI.jpg'); /* Photo by rawpixel on Unsplash */
+}
+
+/* .container img {
+  width: 100%;
+} */
+
+/* .animation-box {
+  width: 75%;
+  height: 27.5rem;
+  background-color: blue;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+} */
+
+/* .animation-container {
+  width: 1000rem;
+  height: 30rem;
+} */
+
+.animated {
+  color: white;
+  font-size: 100px;
+   padding-top:95px;
+   animation-duration: 5s;
+   animation-fill-mode: both;
+
+}
+
+.farFadeIn{
+  color: white;
+  font-size: 20px;
+  animation-duration: 5s;
+  position: fixed;
+  right: 30rem;
+  padding-top: 200px;
+  animation-name: farFadeIn;
+  animation-fill-mode: both;
+}
+
+.rightFadeIn {
+   animation-name: rightFadeIn;
+}
+
+.jobFadeIn {
+  color: white;
+  font-size: 50px;
+  font-family: 'Ranga', cursive;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  position: fixed;
+  right: 30rem;
+  padding-top: 240px;
+  animation-name: jobFadeIn;
+  animation-fill-mode: both;
+  letter-spacing: 2px;
+}
+
+.portrait {
+  animation-duration: 5s;
+  animation-delay: 4s;
+  position: fixed;
+  right: 40rem;
+  top: 20rem;
+  /* padding-top: 320px; */
+  animation-name: jobFadeIn;
+  animation-fill-mode: backwards;
+  z-index: 2;
+  width: 100px;
+  border-radius: 50px;
+
+}
+
+@keyframes rightFadeIn {
+  0% {
+    position: fixed;
+    right: -60rem;
+    opacity: 0;
+  }
+
+  100% {
+    position: fixed;
+    opacity: 1;
+    right: 20rem;
+  }
+}
+
+@keyframes farFadeIn{
+  0% {
+    position: fixed;
+    right: -180rem;
+    opacity: 0;
+  }
+
+  100% {
+    position: fixed;
+    opacity: 1;
+    right: 32rem;
+  }
+}
+
+@keyframes jobFadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
 }
