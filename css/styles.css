@@ -1,3 +1,5 @@
+/* @media only screen and (min-device-width: 501px) { */
+
 body {
   font-size: 62.5%;
   font-style: Arial;
@@ -22,15 +24,6 @@ body {
   height: 30rem;
 } */
 
-.animated {
-  color: white;
-  font-size: 100px;
-   padding-top:95px;
-   animation-duration: 5s;
-   animation-fill-mode: both;
-
-}
-
 .farFadeIn{
   color: white;
   font-size: 20px;
@@ -43,7 +36,12 @@ body {
 }
 
 .rightFadeIn {
-   animation-name: rightFadeIn;
+  color: white;
+  font-size: 100px;
+  padding-top:95px;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-name: rightFadeIn;
 }
 
 .jobFadeIn {
@@ -112,8 +110,9 @@ body {
    0% {opacity: 0;}
    100% {opacity: 1;}
 }
+/* } */
 
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width: 1000px) {
   body {
     font-size: 50%;
     font-style: Arial;
@@ -123,16 +122,6 @@ body {
   .container {
     display: flex;
     justify-content: center;
-  }
-
-  .animated {
-    /* display: inline-block; */
-    color: white;
-    font-size: 100px;
-     padding-top:95px;
-     animation-duration: 5s;
-     animation-fill-mode: both;
-
   }
 
   .farFadeIn{
@@ -147,7 +136,12 @@ body {
   }
 
   .rightFadeIn {
-     animation-name: rightFadeIn;
+    color: white;
+    font-size: 100px;
+    padding-top:95px;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-name: rightFadeIn;
   }
 
   .jobFadeIn {
