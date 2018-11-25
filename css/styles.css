@@ -3,7 +3,7 @@
 body {
   font-size: 62.5%;
   font-style: Arial;
-  background-image: url('https://i.imgur.com/9Iz55JI.jpg'); /* Photo by rawpixel on Unsplash */
+  background-image: url('https://i.imgur.com/9Iz55JI.jpg');
 }
 
 /* .container img {
@@ -28,7 +28,7 @@ body {
   color: white;
   font-size: 20px;
   animation-duration: 5s;
-  position: fixed;
+  position: absolute;
   right: 30rem;
   padding-top: 200px;
   animation-name: farFadeIn;
@@ -50,18 +50,19 @@ body {
   font-family: 'Ranga', cursive;
   animation-duration: 5s;
   animation-delay: 4s;
-  position: fixed;
+  position: absolute;
   right: 30rem;
   padding-top: 240px;
   animation-name: jobFadeIn;
   animation-fill-mode: both;
   letter-spacing: 2px;
+  z-index: 2;
 }
 
 .portrait {
   animation-duration: 5s;
   animation-delay: 4s;
-  position: fixed;
+  position: absolute;
   right: 40rem;
   top: 20rem;
   /* padding-top: 320px; */
@@ -73,15 +74,85 @@ body {
 
 }
 
+.q-and-a {
+  margin: 0 auto;
+  color: white;
+  text-align: justify;
+  font-size: 20px;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  position: absolute;
+  right: 21rem;
+  top: 30rem;
+  /* padding-top: 320px; */
+  animation-name: questionFadeIn;
+  animation-fill-mode: both;
+  z-index: 2;
+  width: 50%;
+  /* margin-left: 20px; */
+}
+
+.first_project {
+  position: absolute;
+  top: 50rem;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 400px;
+  font-size: 30px;
+}
+
+.first_desc, .second_desc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.first_laptop, .second_laptop {
+  width: 600px;
+  height: auto;
+}
+
+button {
+  font-size: 15px;
+  background-color: rgb(129, 4, 4);
+  color: white;
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.second_project {
+  border-top: 5px solid rgba(111, 111, 111, 0.40);
+  position: absolute;
+  top: 74rem;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 400px;
+  font-size: 30px;
+}
+
+
+
 @keyframes rightFadeIn {
   0% {
-    position: fixed;
+    position: absolute;
     right: -60rem;
     opacity: 0;
   }
 
   100% {
-    position: fixed;
+    position: absolute;
     opacity: 1;
     right: 20rem;
   }
@@ -89,19 +160,24 @@ body {
 
 @keyframes farFadeIn{
   0% {
-    position: fixed;
+    position: absolute;
     right: -180rem;
     opacity: 0;
   }
 
   100% {
-    position: fixed;
+    position: absolute;
     opacity: 1;
     right: 32rem;
   }
 }
 
 @keyframes jobFadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes questionFadeIn {
    0% {opacity: 0;}
    100% {opacity: 1;}
 }
@@ -130,7 +206,7 @@ body {
     animation-duration: 5s;
     position: fixed;
     right: 30rem;
-    padding-top: 200px;
+    padding-top: 210px;
     animation-name: farFadeIn;
     animation-fill-mode: both;
   }
@@ -138,7 +214,7 @@ body {
   .rightFadeIn {
     color: white;
     font-size: 100px;
-    padding-top:95px;
+    padding-top: 105px;
     animation-duration: 5s;
     animation-fill-mode: both;
     animation-name: rightFadeIn;
@@ -152,7 +228,7 @@ body {
     animation-delay: 4s;
     position: fixed;
     right: 17rem;
-    padding-top: 230px;
+    padding-top: 240px;
     animation-name: jobFadeIn;
     animation-fill-mode: both;
     letter-spacing: 2px;
@@ -163,7 +239,7 @@ body {
     animation-delay: 4s;
     position: fixed;
     right: 28rem;
-    top: 20rem;
+    top: 22rem;
     /* padding-top: 320px; */
     animation-name: jobFadeIn;
     animation-fill-mode: backwards;
