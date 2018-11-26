@@ -107,11 +107,11 @@ body {
   top: 23rem;
   /* padding-top: 320px; */
   animation-name: jobFadeIn;
-  animation-fill-mode: backwards;
+  animation-fill-mode: both;
   z-index: 2;
   width: 100px;
   border-radius: 75px;
-
+  
 }
 
 .q-and-a {
