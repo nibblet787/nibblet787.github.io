@@ -18,7 +18,7 @@ body {
   z-index: 5;
 }
 
-.linkedin, .github {
+.linkedin, .github, .resume {
   background-color: black;
   width: 40px;
   height: 50%;
@@ -387,7 +387,7 @@ button:hover {
     z-index: 5;
   }
 
-  .linkedin, .github {
+  .linkedin, .github, .resume {
     background-color: black;
     width: 40px;
     height: 50%;
